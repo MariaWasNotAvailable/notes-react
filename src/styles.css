@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  color: lightgray;
+  background-color: black;
+  padding: 0;
+  position: absolute;
+  top: 1%;
+  left: 16%;
+  width: 66%;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  appearance: none;
+  padding: 3px;
+  font-size: 1.25rem;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid dimgray;
+  transition: ease-in-out 0.5s;
+}
+
+input:focus {
+  border-color: lightgray;
+  outline: none;
+}
+
+button {
+  all: unset;
+  padding: 3px;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul, li {
+  margin: 0;
+  padding: 3px 0;
+  font-size: 1.25rem;
+}
+
