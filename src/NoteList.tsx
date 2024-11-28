@@ -1,23 +1,25 @@
-import { useState } from 'react';
-import { useNotes, useNotesDispatch } from './NotesContext.js';
+import { useState, type Dispatch } from 'react';
+import { useNotes, useNotesDispatch } from './NotesContext';
 
 export default function NoteList() {
-  const notes = useNotes();
+  const notes = useNotes()!;
+
   return (
     <ul>
-      {notes.map(note => (
+      {notes.map((note:{id:number, text:string}) => (
         <li key={note.id}>
-          <Note note={note} />
+          <Note {...note} />
         </li>
       ))}
     </ul>
   );
 }
 
-function Note({ note }) {
+function Note(note:{id:number, text:string}) {
   const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useNotesDispatch();
+  const dispatch = useNotesDispatch()!;
   let noteContent;
+
   if (isEditing) {
     noteContent = (
       <>

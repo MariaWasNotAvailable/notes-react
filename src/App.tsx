@@ -1,6 +1,6 @@
-import AddNote from './AddNote.js';
-import NoteList from './NoteList.js';
-import { NotesProvider } from './NotesContext.js';
+import AddNote from './AddNote';
+import NoteList from './NoteList';
+import { NotesProvider } from './NotesContext';
 
 export default function NoteApp() {
   return (

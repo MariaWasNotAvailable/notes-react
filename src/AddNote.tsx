@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { useNotesDispatch } from './NotesContext.js';
+import { useState, type Dispatch } from 'react';
+import { useNotesDispatch } from './NotesContext';
 
 export default function AddNote() {
   const [text, setText] = useState('');
-  const dispatch = useNotesDispatch();
+  const dispatch:Dispatch<{ type:string; id:number; text:string; }> = useNotesDispatch()!;
 
   return (
     <>
