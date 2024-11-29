@@ -1,17 +1,15 @@
-import { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useReducer, useEffect, ReactNode, type Reducer } from 'react';
 
-const NotesContext = createContext<any>(null);
-const NotesDispatchContext = createContext<any>(null);
-
+type NoteType = {id:number, text:string}[];
 type Props = {
   children?: ReactNode
 };
 
+const NotesContext = createContext<NoteType | null>(null);
+const NotesDispatchContext = createContext<any>(null);
+
 export function NotesProvider({ children }:Props) {
-  const [notes, dispatch] = useReducer(
-    notesReducer,
-    initialNotes
-  );
+  const [notes, dispatch] = useReducer<Reducer<any, any>>(notesReducer, initialNotes);
 
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
@@ -34,7 +32,7 @@ export function useNotesDispatch() {
   return useContext(NotesDispatchContext);
 }
 
-function notesReducer(notes:{id:number}[], action:{id:number, note:{id:number}, type:string, text:string}) {
+function notesReducer(notes:NoteType, action:{id:number, note:{id:number}, type:string, text:string}) {
   switch (action.type) {
     case 'added': {
       return [...notes, {

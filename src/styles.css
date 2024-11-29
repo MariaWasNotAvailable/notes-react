@@ -4,8 +4,8 @@
 
 body {
   font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-  color: lightgray;
-  background-color: black;
+  color: white;
+  background-color: white;
   padding: 0;
   position: absolute;
   top: 1%;
@@ -15,25 +15,39 @@ body {
   justify-content: center;
 }
 
+h1 {
+  color: #f3fff8;
+}
+
 input {
   appearance: none;
   padding: 3px;
   font-size: 1.25rem;
-  background-color: black;
-  color: white;
-  border-radius: 5px;
-  border: 2px solid dimgray;
+  background-color: white;
+  color: #419c67;
   transition: ease-in-out 0.5s;
+  border-radius: 8px;
+  border: 2px solid #58d68d;
+  width: 100%;
 }
 
 input:focus {
-  border-color: lightgray;
+  border-color: #419c67;
   outline: none;
+}
+
+::placeholder {
+  color: lightgray;
 }
 
 button {
   all: unset;
   padding: 3px;
+}
+
+.input-box {
+  display: flex;
+  width: 100%;
 }
 
 ul {
@@ -50,3 +64,20 @@ ul, li {
   font-size: 1.25rem;
 }
 
+#root {
+  background: linear-gradient(#58d68d, #58d68d, #419c67);
+  border-radius: 10px;
+  padding: 20px 15px;
+  height: 96vh;
+  width: 45%;
+}
+
+@media (orientation: portrait) {
+  body {
+    width: 96%;
+    left: 0;
+  }
+  #root {
+    width: 100%;
+  }
+}

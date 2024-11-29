@@ -7,33 +7,38 @@ export default function AddNote() {
 
   return (
     <>
-      <input
-        placeholder="Add note"
-        value={text}
-        onChange={e => setText(e.target.value)}
-        onKeyDown={(e) => {
-          if (text && e.key === 'Enter') {
-            setText('');
+      <div className="input-box">
+        <input
+          placeholder="Add note"
+          value={text}
+          onChange={e => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (text && e.key === 'Enter') {
+              setText('');
+              dispatch({
+                type: 'added',
+                id: nextId++,
+                text: text,
+              }); 
+            }
+          }}
+        />
+        <button onClick={() => {
+          if (text) {
+          setText('');
             dispatch({
               type: 'added',
               id: nextId++,
               text: text,
             }); 
           }
-        }}
-      />
-      <button onClick={() => {
-        if (text) {
-        setText('');
-          dispatch({
-            type: 'added',
-            id: nextId++,
-            text: text,
-          }); 
-        }
-      }}>&#10133;</button>
+        }}>&#10133;</button>
+      </div>
     </>
   );
 }
 
 let nextId = 1;
+if (localStorage.getItem('notes')) {
+  nextId = JSON.parse(localStorage.getItem('notes')!).length++;
+}
