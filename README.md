@@ -1,7 +1,7 @@
 # notes-react
 
 ## Description
-Quick localStorage-based app made with React 
+Quick localStorage-based app made with React and TypeScript
 
 ## Installation
 
@@ -17,4 +17,4 @@ npm install
 ```
 npm start
 ```
-...or go [here](https://mariawasnotavailable.github.io/notes-react/index.html). The notes are being saved to localStorage.
+...or go [here](https://mariawasnotavailable.github.io/notes-react/index.html). The notes are being auto-saved to localStorage.
