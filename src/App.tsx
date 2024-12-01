@@ -6,8 +6,10 @@ export default function NoteApp() {
   return (
     <NotesProvider>
       <h1>Notes</h1>
-      <AddNote />
-      <NoteList />
+      <div id="note-list">
+        <AddNote />
+        <NoteList />
+      </div>
     </NotesProvider>
   );
 }

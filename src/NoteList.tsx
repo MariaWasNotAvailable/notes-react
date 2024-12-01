@@ -47,7 +47,7 @@ function Note(note:{id:number, text:string}) {
               setTimeout(() => setIsEditing(false), 3000)
             }}
               onKeyUp={(e) => {
-                if (e.key === 'Enter' || e.keyCode === 13) {
+                if (e.key === 'Enter') {
                   setIsEditing(false);
                 }
               }

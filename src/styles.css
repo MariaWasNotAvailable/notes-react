@@ -48,6 +48,8 @@ button {
 .input-box {
   display: flex;
   width: 100%;
+  font-size: 1.75rem;
+  padding-bottom: 0.5em;
 }
 
 ul {
@@ -61,15 +63,19 @@ li {
 ul, li {
   margin: 0;
   padding: 3px 0;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 #root {
   background: linear-gradient(#58d68d, #58d68d, #419c67);
   border-radius: 10px;
-  padding: 20px 15px;
+  padding: 25px 20px;
   height: 96vh;
   width: 45%;
+}
+
+#note-list {
+  font-size: 1.5em;
 }
 
 @media (orientation: portrait) {
